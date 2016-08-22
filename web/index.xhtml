@@ -12,9 +12,12 @@
         <h:form>
             <h:panelGrid columns="3">
                 <h:outputLabel value="Username" for="username"/>
-                <h:inputText id="username" required="true" requiredMessage="#{msg.msg.username.validation}"/>
+                <h:inputText value="#{mainBean.username}" id="username" required="true" requiredMessage="#{msg['msg.username.validation']}"/>
                 <h:message for="username" />
-                    
+                
+                <f:facet name="footer">
+                    <h:commandButton value="Submit" action="/pages/home?faces-redirect=true"></h:commandButton>
+                </f:facet>
             </h:panelGrid>
         </h:form>
     </h:body>
